@@ -1,0 +1,233 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+    font-size: small;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #333333;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulsate {
+  0% {
+    transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+
+  50% {
+    opacity: 1.0;
+  }
+
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0.0;
+  }
+}
+
+@keyframes pulse-title {
+  0% {
+    letter-spacing: 0px;
+  }
+
+  50% {
+    letter-spacing: 1px;
+  }
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 10px solid #f3f3f3;
+  border-top: 10px solid #383636;
+  border-radius: 50%;
+  animation: spinner 1.5s linear infinite;
+}
+
+.spinner-container{
+  width: 75px;
+  height: 75px;
+  margin: auto;
+}
+.spinner-box{
+  width:100%;
+  height:75px;
+}
+
+.home-team{
+  width:  calc(50% - 60px);
+  text-align: right;
+}
+.away-team{
+  width: calc(50% - 60px);
+  text-align: left;
+}
+.score{  
+  width: 40px;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;    
+}
+.match-time{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 45px;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+}
+.match-time-live{
+  background-color: #f07661;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 10px;
+}
+.match-badge{
+  color:white;
+  height: 90px;  
+  margin: 10px;
+  margin-bottom:10px;
+}
+.match-bottom-badge{
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-left:5px;  
+  padding-right:5px;  
+  display: flex;
+  align-items: center;
+  height: 60px;
+  background-color: rgb(71, 71, 71);
+}
+.match-top-badge{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;  
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  background-color: #f07661;
+  color: #333333;
+  font-weight: 500;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+}
+.matches-box{  
+  list-style-type: none;
+  margin: auto;
+  margin-right: calc(20%);
+  margin-left: calc(20%);
+  padding: 0px;
+}
+
+@media (max-width: 767px){
+  .matches-box {
+    margin-right: 0px; 
+    margin-left: 0px;
+  }
+} 
+
+.filter-box{
+  padding-left:10px;
+  padding-right:10px;
+  padding-top: 10px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+}
+.filter-box-schedule{
+  height:45px;
+  width: calc(70% - 10px);
+  margin-left:10px;
+  background-color: mediumpurple;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.1s ease-out;
+}
+.filter-box-schedule-hidden{
+  display: none;
+  transition:all 0.1s ease-in;
+}
+.filter-box-live{
+  position: relative;
+  height:45px;
+  width: 30%; 
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.1s ease-in;
+  letter-spacing: 1px;
+}
+.filter-box-live-clicked{
+  width: 100%;
+  transition: all 0.1s ease-out; 
+  color: rgb(167, 4, 4)!important;
+}
+.header-title{
+  background-color: black;
+  color:white;
+  font-weight: bolder;
+  font-size: larger;
+  letter-spacing: 3px;
+  height: 45px;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+}
+.no-match-found{
+  background-color: transparent;
+  letter-spacing: 0px;
+  animation: pulse-title 5s infinite;
+  font-size: 20px;
+}
+
+.ring-container {
+  position: absolute;
+  left:5px;
+}
+.circle {
+  width: 15px;
+  height: 15px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 8px;
+  left:8px;
+}
+.ringring {
+  border: 3px solid red;
+  border-radius: 30px;
+  height: 25px;
+  width: 25px;
+  animation: pulsate 0.8s infinite;
+  opacity: 0.0;
+  transition: ease-in-out;
+}
+
+.filter-date-select{
+  width:100%;
+  height:45px;
+  background-color: transparent;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
